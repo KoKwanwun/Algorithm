@@ -21,6 +21,7 @@ def solution(clothes):
     
     # 수학 계수의 합 이용
     # (x+a)(x+b)(x+c) -> 계수 : 1 + (a+b+c) + (ab+bc+ca) + (abc)
+    # x에 1을 넣으면 계수의 합을 구할 수 있음
     # 1은 조합에 포함이 안되므로 리턴 시 -1
     for clothCnt in mlist:
         answer *= (clothCnt + 1)
