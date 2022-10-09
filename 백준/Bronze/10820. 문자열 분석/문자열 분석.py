@@ -1,24 +1,23 @@
 import sys
 
-while(True):
-    s = sys.stdin.readline().rstrip('\n')
+while True:
+    # 줄바꿈 제거
+    line = sys.stdin.readline().rstrip('\n')
 
-    if not s:
+    # 입력이 없다면 탈출
+    if not line:
         break
 
-    cntList = [0,0,0,0]
+    l, u, d, s = 0, 0, 0, 0
 
-    for i in range(len(s)):
-        if ord(s[i]) >= 97 and ord(s[i]) <= 122:
-            cntList[0] += 1
-        elif ord(s[i]) >= 65 and ord(s[i]) <= 90:
-            cntList[1] += 1
-        elif ord(s[i]) >= 48 and ord(s[i]) <= 57:
-            cntList[2] += 1
-        elif s[i] == " ":
-            cntList[3] += 1
-
-    for i in range(4):
-        print(cntList[i], end=" ")
-
-    print()
+    for each in line:
+        if each.islower():
+            l += 1
+        elif each.isupper():
+            u += 1
+        elif each.isdigit():
+            d += 1
+        elif each.isspace():
+            s += 1
+            
+    print(l, u, d, s)
