@@ -6,5 +6,5 @@
 <img src="BAEKJOON_Image.png">
 
 ## Contents
-- Level 1
-- Level 2
+- Bronze
+- Silver
