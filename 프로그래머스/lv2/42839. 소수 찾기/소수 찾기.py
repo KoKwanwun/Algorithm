@@ -14,15 +14,15 @@ def solution(numbers):
     numbersList = list(numbers)
 
     mlist = []
+    combList = set()
 
     for num in range(1, len(numbers)+1):
-        combList = list(permutations(numbers, num))
+        combList |= set(map(int, map(''.join, permutations(numbers, num))))
 
-        for eachList in combList:
-            eachComb = int(''.join(eachList))
-            if eachComb in mlist:
-                continue
-            if prime_list[eachComb]:
-                mlist.append(eachComb)
-            
+    prime_list = prime_check(max(combList))
+
+    for each in combList:
+        if prime_list[each]:
+            mlist.append(each)
+        
     return len(mlist)
