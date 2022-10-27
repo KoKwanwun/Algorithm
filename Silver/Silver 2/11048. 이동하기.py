@@ -4,8 +4,14 @@ n, m = map(int, sys.stdin.readline().split())
 
 mlist = []
 
+# 1행, 1열에 각각 0 한줄을 넣어줌
+"""
+2*2 배열이라면 아래처럼 추가하여 index overflow 방지
+0 0 0
+0
+0
+"""
 mlist.append([0] * (m+1))
-
 for _ in range(n):
     s = list(map(int, sys.stdin.readline().split()))
     s.insert(0, 0)
