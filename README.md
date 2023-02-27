@@ -8,3 +8,4 @@
 ## Contents
 - Bronze
 - Silver
+- Gold
