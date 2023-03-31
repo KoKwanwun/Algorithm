@@ -1,0 +1,7 @@
+-- 생일이 3월인 여성 회원의 ID, 이름, 성별, 생년월일을 조회
+-- DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d')
+-- DATE_OF_BIRTH LIKE '%-03-%' : 생일이 3월 (-03-이 포함되는 것으로 찾기)
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') as DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE TLNO is not NULL and DATE_OF_BIRTH LIKE '%-03-%' and GENDER = 'W'
+ORDER BY 1
