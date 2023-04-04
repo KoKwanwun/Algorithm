@@ -1,0 +1,6 @@
+-- 가장 먼저 들어온 동물의 이름을 조회
+-- LIMIT 1 : 하나만 가져오기
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 1
