@@ -24,4 +24,7 @@ def bfs(v):
 
 bfs(1)
 # 1은 제외
-print(sum(visited) - 1)
+if sum(visited) == 0:
+    print(0)
+else:
+    print(sum(visited) - 1)
