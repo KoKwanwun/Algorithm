@@ -13,5 +13,5 @@ for _ in range(n-1):
     maxDp = [mlist[0] + max(maxDp[0], maxDp[1]), mlist[1] + max(maxDp), mlist[2] + max(maxDp[1], maxDp[2])]
     minDp = [mlist[0] + min(minDp[0], minDp[1]), mlist[1] + min(minDp), mlist[2] + min(minDp[1], minDp[2])]
     
-print(maxDp)
-print(minDp)
+print(max(maxDp))
+print(min(minDp))
