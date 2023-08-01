@@ -1,3 +1,5 @@
+# dict의 key값을 문자열로 해야하는 이유
+# 01234567을 1234567로 저장하기 때문에 결과값이 다르게 출력
 import sys
 input = sys.stdin.readline
 
