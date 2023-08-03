@@ -1,0 +1,6 @@
+def solution(n):
+    # 제곱근 판별 식
+    if int(n ** 0.5) ** 2 == n:
+        return (int(n ** 0.5) + 1) ** 2
+    else:
+        return -1
