@@ -1,0 +1,17 @@
+-- 7월 아이스크림 총 주문량과 상반기의 아이스크림 총 주문량을 더한 값이 큰 순서대로 상위 3개의 맛을 조회
+WITH A AS (
+    SELECT FLAVOR, TOTAL_ORDER
+    FROM FIRST_HALF
+    UNION
+    SELECT FLAVOR, TOTAL_ORDER
+    FROM JULY
+), B AS (
+    SELECT FLAVOR, SUM(TOTAL_ORDER) AS SUM_TO
+    FROM A
+    GROUP BY FLAVOR
+    ORDER BY SUM_TO DESC
+)
+
+SELECT FLAVOR
+FROM B
+LIMIT 3
