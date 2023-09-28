@@ -1,0 +1,20 @@
+-- 0시부터 23시까지, 각 시간대별로 입양이 몇 건이나 발생했는지 조회
+-- 시간대 순으로 정렬
+-- WITH RECURSIVE : 재귀 함수로 임시 테이블 생성
+-- IFNULL : NULL이면 정해놓은 값 넣기
+WITH RECURSIVE A AS (
+    SELECT 0 AS HOUR
+    UNION ALL
+    SELECT HOUR+1 FROM A
+    WHERE HOUR < 23
+)
+
+SELECT A.HOUR, IFNULL(B.COUNT, 0) AS COUNT
+FROM A
+LEFT JOIN (
+    SELECT DATE_FORMAT(DATETIME, "%H") AS HOUR, COUNT(ANIMAL_ID) AS COUNT
+    FROM ANIMAL_OUTS
+    GROUP BY HOUR
+    ORDER BY HOUR
+) B
+ON A.HOUR = B.HOUR
